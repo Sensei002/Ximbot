@@ -49,9 +49,29 @@ g++ Main.cpp -lX11
 sudo ./a.out
 ```
 
-You should now see a lot of lines being printed saying "LOOP OK...." which means the cheat is running fine. Enjoy.
+If you see something simmilar to the text below it means the cheat is running fine. Enjoy.
+```
+======================== SETTINGS LOADED ========================
+FEATURE_AIMBOT_ON               true
+FEATURE_NORECOIL_ON             true
+FEATURE_SENSE_ON                true
+FEATURE_GAME_MODE               0       
+SENSE_MAX_RANGE                 250 
+SENSE_MAX_RANGE_OVER_WALL       250 
+AIMBOT_TRIGGER                  0
+AIMBOT_SMOOTHING                100
+AIMBOT_ACTIVATION_FOV           20
+AIMBOT_MAX_RANGE                50
+NORECOIL_PITCH_STRENGTH         0.500000
+NORECOIL_YAW_STRENGTH           0.500000
+=================================================================
 
+UPDATE[1000] OK. 
+UPDATE[0] OK. 
+UPDATE[1000] OK. 
+UPDATE[0] OK. 
 
+```
 
 
 
