@@ -32,10 +32,10 @@ git clone https://github.com/Savage3e/Ximbot
 2. Go inside the downloaded folder
 
 ```
-cd myapex
+cd Ximbot
 ```
 
-3. Compile the code 
+3. Compile the code (requires sudo access)
 
 ```
 g++ Main.cpp -lX11
