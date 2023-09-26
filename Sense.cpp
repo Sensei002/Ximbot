@@ -18,33 +18,16 @@ private:
     RemotePlayers *m_remotePlayers;
     std::chrono::steady_clock::time_point m_lastUpdated = {};
 public:
-/*
-    Sense(ConfigLoader *configLoader,
-          Level *level,
-          LocalPlayer *localPlayer,
-          std::vector<Player *> *players,
-          X11Utils *x11Utils)
-    {
-        m_configLoader = configLoader;
-        m_level = level;
-        m_localPlayer = localPlayer;
-        m_players = players;
-        m_x11Utils = x11Utils;
-    }
-    */
     Sense(ConfigLoader *configLoader,
           Level *level,
           LocalPlayer *localPlayer,
           std::vector<Player *> *players
           )
-          //RemotePlayers *remotePlayers)
     {
         m_configLoader = configLoader;
         m_level = level;
         m_localPlayer = localPlayer;
         m_players = players;
-        
-        //m_remotePlayers = remotePlayers;
     }
 
     void update()
