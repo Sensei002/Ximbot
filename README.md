@@ -26,7 +26,7 @@ You can hold left shift to temporarily disable.
 1. Open terminal and run the following to download the cheat source code
 
 ```
-git clone https://github.com/ximbot/myapex
+git clone https://github.com/Savage3e/Ximbot
 ```
 
 2. Go inside the downloaded folder
