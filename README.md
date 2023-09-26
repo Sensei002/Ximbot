@@ -1,10 +1,11 @@
 # MyApex
 Simple C++ cheats for Apex Legends (Linux Steam version).
+### GameMode
+Select correct gamemode to glow properly on the right teammates -> #0: BR/GUNRUN, 1: CONTROL/TDM
 
 ### Sense 
-All enemies will be highlighted with Bloodhound Scan.
-If aiming down sights and the enemy is further than 50 meters then they will be highlighted using the Caustic Vision and not visible through walls in order to prevent shooting at walls.
-
+All enemies will be highlighted with Cyan color.
+Based on their health value, they will glow differently.
 ### NoRecoil
 Adjustable reduction in vertical and horizontal weapon recoil.
 You can hold left shift to temporarily disable.
