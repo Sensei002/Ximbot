@@ -1,30 +1,32 @@
+    // Updated 03.10.23
     #pragma once
     namespace offsets
     {
         // buttons
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        constexpr long IN_ATTACK = (0x07422868);            // [Buttons] -> in_attack
+        constexpr long IN_ATTACK = (0x07421868);            // [Buttons] -> in_attack
         // core
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         constexpr long REGION = 0x140000000;              // [Mine]          -> Region
-        constexpr long LEVEL = 0x16f71e0;                 // [Miscellaneous] -> LevelName
-        constexpr long LOCAL_PLAYER = 0x21d3758;      // [Miscellaneous] -> AVC_GameMovement+0x8
-        constexpr long ENTITY_LIST = 0x1e23418;           // [Miscellaneous] -> cl_entitylist
-        const long HIGHLIGHT_SETTINGS = 0xb5f9620;      // Miscellaneous.?
+        constexpr long LEVEL = 0x16f61c0;                 // [Miscellaneous] -> LevelName
+        constexpr long LOCAL_PLAYER = 0x21d2738;      // [Miscellaneous] -> AVC_GameMovement+0x8
+        constexpr long ENTITY_LIST = 0x1e223f8;           // [Miscellaneous] -> cl_entitylist
+        const long HIGHLIGHT_SETTINGS = 0xB5F8620;      // Miscellaneous.?
         const long HIGHLIGHT_TYPE_SIZE = 0x28;          // Miscellaneous.?
         // entity
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         constexpr long LOCAL_ORIGIN = 0x0188; // 0x017c; // [DataMap.CBaseViewModel]    -> m_localOrigin
         // player
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        constexpr long OFFSET_YAW = (0x21fc - 0x8); //m_currentFramePlayer.m_ammoPoolCount - 0x8
         constexpr long GLOW_ENABLE = 0x294;              // [RecvTable.DT_HighlightSettings] -> m_highlightServerContextID + 0x8
         constexpr long GLOW_THROUGH_WALL = 0x278;               // [RecvTable.DT_HighlightSettings] -> m_highlightServerContextID + 0x10
         const long GLOW_ACTIVE_STATES = 0x298;          // DT_HighlightSettings.m_highlightServerActiveStates
-        constexpr long GLOW_COLOR = 0x200;                  // [Miscellaneous]                  -> glow_color
+        constexpr long GLOW_COLOR = 0x1D0;                  // [Miscellaneous]                  -> glow_color
         constexpr long TEAM_NUMBER = 0x037c;                // [RecvTable.DT_BaseEntity]        -> m_iTeamNum
         constexpr long NAME = 0x04b9;                       // [RecvTable.DT_BaseEntity]        -> m_iName
         constexpr long LIFE_STATE = 0x06c8;                 // [RecvTable.DT_Player]            -> m_lifeState
-        constexpr long VEC_PUNCH_WEAPON_ANGLE = 0x23f8;     // [DataMap.C_Player]               -> m_currentFrameLocalPlayer.m_vecPunchWeapon_Angle
+        constexpr long VEC_PUNCH_WEAPON_ANGLE = 0x23f8;     // [DataMap.C_Player] ->m_currentFrameLocalPlayer.m_vecPunchWeapon_Angle           
         constexpr long VIEW_ANGLE = (0x24f4 - 0x14);        // [DataMap.C_Player]               -> m_ammoPoolCapacity - 0x14
         constexpr long BLEEDOUT_STATE = 0x26a0;             // [RecvTable.DT_Player]            -> m_bleedoutState
         constexpr long ZOOMING = 0x1b91;                    // [RecvTable.DT_Player]            -> m_bZooming
@@ -33,6 +35,7 @@
         constexpr long CURRENT_HEALTH = 0x036c;                  // m_iHealth
         constexpr long ARMOR_TYPE = 0x45c4;             // m_armorType
         constexpr long OFFSET_ViewModels = 0x2ce0;         // m_hViewModels
-        constexpr long thirdperson_override = 0x01db1f70;          // m_thirdPersonOverride
+        constexpr long thirdperson_override = 0x01db0f50;          // m_thirdPersonOverride
         constexpr long m_thirdPersonShoulderView = 0x3650;    // m_thirdPersonShoulderView
+        constexpr long ITEM_ID = 0x1578;    //m_customScriptInt
     }
