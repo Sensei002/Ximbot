@@ -15,7 +15,7 @@
     const long HIGHLIGHT_TYPE_SIZE = 0x28;              // Miscellaneous.?
     // entity
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    constexpr long LOCAL_ORIGIN = 0x0188;               // [DataMap.CBaseViewModel]    -> m_localOrigin
+    constexpr long LOCAL_ORIGIN = 0x017c;               // [DataMap.CBaseViewModel]    -> m_localOrigin
     // player
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     constexpr long OFFSET_YAW = (0x21fc - 0x8);         //m_currentFramePlayer.m_ammoPoolCount - 0x8
