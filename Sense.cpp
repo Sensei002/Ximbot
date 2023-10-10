@@ -14,8 +14,6 @@ private:
     Level *m_level;
     LocalPlayer *m_localPlayer;
     std::vector<Player *> *m_players;
-    X11Utils *m_x11Utils;
-    RemotePlayers *m_remotePlayers;
     std::chrono::steady_clock::time_point m_lastUpdated = {};
 public:
     Sense(ConfigLoader *configLoader,
@@ -29,7 +27,7 @@ public:
         m_localPlayer = localPlayer;
         m_players = players;
     }
-
+    
     void update()
     {
         auto now = std::chrono::steady_clock::now();
@@ -43,13 +41,13 @@ public:
         double localX = m_localPlayer->getLocationX();
         double localY = m_localPlayer->getLocationY();
         double localZ = m_localPlayer->getLocationZ();
-        //auto& players = m_remotePlayers->getPlayers();
         if (!m_level->isPlayable())
             return;
         for (int i = 0; i < m_players->size(); i++) {
             Player *player = m_players->at(i);
             if (!player->isValid())
                 continue;
+
             if (player->isSameTeam(m_localPlayer, gameMode)) {
                 player->setGlowEnable(1);
                 player->setGlowThroughWall(1);
@@ -66,7 +64,14 @@ public:
                 player->setGlowThroughWall(1);
                 int health = player->getShieldValue() + player->getHealthValue();
                 player->setCustomGlow(health, true, false);
-            } else if (distance < senseMaxRangeOverWall) {
+            } 
+            if (!player->isVisible() && !player->isKnocked() && distance < senseMaxRange){
+                player->setGlowEnable(1);
+                player->setGlowThroughWall(1);
+                int health = player->getShieldValue() + player->getHealthValue();
+                player->setCustomGlow(health, true, false);
+            } 
+            else if (distance < senseMaxRangeOverWall) {
                 player->setGlowEnable(1);
                 player->setGlowThroughWall(1);
                 player->setCustomGlow(0, false, false);
