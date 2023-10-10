@@ -163,23 +163,22 @@ public:
             settingIndex = 20;
         } else if (!isVisible) {
             settingIndex = 65;
-            glowColorRGB = { 0, 1, 4 }; // Cyan
-        } 
-        else if (health >= 225) {
+            glowColorRGB = { 0.5, 0.5, 0.5 }; // grey
+        } else if (health >= 225) {
             settingIndex = 66;
-            glowColorRGB = { 0.5, 0, 0 }; // red
-        }else if (health >= 200) {
+            glowColorRGB = { 1, 0, 0 }; // red
+        } else if (health >= 200) {
             settingIndex = 67;
-            glowColorRGB = { 1, 0, 1 }; // purple
+            glowColorRGB = { 0.5, 0, 0.5 }; // purple
         } else if (health >= 175) {
             settingIndex = 68;
-            glowColorRGB = { 0, 0.5, 1 }; // light blue
+            glowColorRGB = { 0, 0.5, 1 }; // blue
         } else if (health >= 100) {
             settingIndex = 69;
             glowColorRGB = { 0, 1, 0.5 }; // light green
         } else {
             settingIndex = 70;
-            glowColorRGB = { 0, .5, 0 }; // green
+            glowColorRGB = { 0, 1, 0 }; // green
         }
         mem::Write<unsigned char>(basePointer + offsets::GLOW_ACTIVE_STATES + contextId, settingIndex);
         if (!isSameTeam) {
