@@ -147,7 +147,7 @@ public:
         int result = mem::ReadInt(healthOffset);
         return result;
     }
-    void setCustomGlow(int health, bool isVisible, bool isSameTeam)
+     void setCustomGlow(int health, bool isVisible, bool isSameTeam)
     {
         static const int contextId = 1; // Same as glow enable
         long basePointer = getBasePointer();
@@ -163,22 +163,22 @@ public:
             settingIndex = 20;
         } else if (!isVisible) {
             settingIndex = 65;
-            glowColorRGB = { 0.5, 0.5, 0.5 }; // grey
-        } else if (health >= 225) {
+            glowColorRGB = { 0.5, 0.5, 0.5 }; // knocked enemies // gray
+        } else if (health >= 210) {
             settingIndex = 66;
-            glowColorRGB = { 1, 0, 0 }; // red
-        } else if (health >= 200) {
+            glowColorRGB = { 1, 0, 0 }; // red shield
+        } else if (health >= 195) {
             settingIndex = 67;
-            glowColorRGB = { 0.5, 0, 0.5 }; // purple
+            glowColorRGB = { 0.5, 0, 0.5 }; // purple shield
         } else if (health >= 175) {
             settingIndex = 68;
-            glowColorRGB = { 0, 0.5, 1 }; // blue
+            glowColorRGB = { 0, 0.5, 1 }; // blue shield
         } else if (health >= 100) {
             settingIndex = 69;
-            glowColorRGB = { 0, 1, 0.5 }; // light green
+            glowColorRGB = { 0, 1, 0.5 }; // gray shield // cyan 
         } else {
             settingIndex = 70;
-            glowColorRGB = { 0, 1, 0 }; // green
+            glowColorRGB = { 0, 0.5, 0 }; // low health enemies // greeen
         }
         mem::Write<unsigned char>(basePointer + offsets::GLOW_ACTIVE_STATES + contextId, settingIndex);
         if (!isSameTeam) {
