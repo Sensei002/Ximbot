@@ -63,10 +63,10 @@ FEATURE_GAME_MODE               0
 SENSE_MAX_RANGE                 250 
 SENSE_MAX_RANGE_OVER_WALL       250 
 AIMBOT_TRIGGER                  0
-AIMBOT_SMOOTHING                100
-AIMBOT_ACTIVATION_FOV           20
-AIMBOT_MAX_RANGE                50
-NORECOIL_PITCH_STRENGTH         0.500000
+AIMBOT_SMOOTHING                10
+AIMBOT_ACTIVATION_FOV           9
+AIMBOT_MAX_RANGE                69
+NORECOIL_PITCH_STRENGTH         0.590000
 NORECOIL_YAW_STRENGTH           0.500000
 =================================================================
 
