@@ -147,7 +147,7 @@ public:
         int result = mem::ReadInt(healthOffset);
         return result;
     }
-     void setCustomGlow(int health, bool isVisible, bool isSameTeam)
+    void setCustomGlow(int health, bool isVisible, bool isSameTeam)
     {
         static const int contextId = 1; // Same as glow enable
         long basePointer = getBasePointer();
@@ -181,12 +181,19 @@ public:
             glowColorRGB = { 0, 0.5, 0 }; // low health enemies // greeen
         }
         mem::Write<unsigned char>(basePointer + offsets::GLOW_ACTIVE_STATES + contextId, settingIndex);
+        long highlightSettingsPtr = mem::Read<long>(offsets::REGION + offsets::HIGHLIGHT_SETTINGS);
         if (!isSameTeam) {
-            long highlightSettingsPtr = mem::Read<long>(offsets::REGION + offsets::HIGHLIGHT_SETTINGS);
             mem::Write<typeof(highlightFunctionBits)>(
                 highlightSettingsPtr + offsets::HIGHLIGHT_TYPE_SIZE * settingIndex + 4, highlightFunctionBits);
             mem::Write<typeof(glowColorRGB)>(
                 highlightSettingsPtr + offsets::HIGHLIGHT_TYPE_SIZE * settingIndex + 8, glowColorRGB);
+        }
+        //item Glow
+        for (int highlightId = 31; highlightId < 35; highlightId++) {
+        const GlowMode newGlowMode = { 137,138,35,127 };
+        const GlowMode oldGlowMode = mem::Read<GlowMode>(highlightSettingsPtr + (offsets::HIGHLIGHT_TYPE_SIZE * highlightId) + 4);
+        if (newGlowMode != oldGlowMode)
+            mem::Write<GlowMode>(highlightSettingsPtr + (offsets::HIGHLIGHT_TYPE_SIZE * highlightId) + 4, newGlowMode);
         }
     }
     bool isNPC()
