@@ -5,7 +5,11 @@ Select correct gamemode to glow properly on the right teammates -> #0: BR/GUNRUN
 
 ### Sense 
 All enemies will be highlighted with Cyan color.
-Based on their health value, they will glow differently.
+Based on their health and shield value, they will glow differently.
+
+### Item Glow
+Rare to Legendary items in vicinity will glow.
+
 ### NoRecoil
 Adjustable reduction in vertical and horizontal weapon recoil.
 You can hold left shift to temporarily disable.
