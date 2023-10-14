@@ -33,7 +33,6 @@ public:
         m_entityListIndex = entityListIndex;
         
     }
-
     Player(int entityListIndex, int *counter) :
         m_entityListIndex(entityListIndex),
         m_counter(counter) {}
@@ -49,7 +48,6 @@ public:
         short result = mem::ReadShort(ptrLong);
         return result > 0;
     }
-    
     std::string getName()
     {
         long basePointer = getBasePointer();
@@ -146,7 +144,7 @@ public:
         int result = mem::ReadInt(healthOffset);
         return result;
     }
-       void setCustomGlow(int health, bool isVisible, bool isSameTeam)
+    void setCustomGlow(int health, bool isVisible, bool isSameTeam)
     {
         static const int contextId = 1; // Same as glow enable
         long basePointer = getBasePointer();
