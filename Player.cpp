@@ -107,7 +107,6 @@ public:
         long ptrLong = basePointer + offsets::GLOW_ENABLE;
         mem::WriteInt(ptrLong, glowEnable);
     }
-    //==============================================
     bool isKnocked()
     {
         if (m_isNPC) {
@@ -147,7 +146,7 @@ public:
         int result = mem::ReadInt(healthOffset);
         return result;
     }
-    void setCustomGlow(int health, bool isVisible, bool isSameTeam)
+       void setCustomGlow(int health, bool isVisible, bool isSameTeam)
     {
         static const int contextId = 1; // Same as glow enable
         long basePointer = getBasePointer();
@@ -187,6 +186,7 @@ public:
                 highlightSettingsPtr + offsets::HIGHLIGHT_TYPE_SIZE * settingIndex + 4, highlightFunctionBits);
             mem::Write<typeof(glowColorRGB)>(
                 highlightSettingsPtr + offsets::HIGHLIGHT_TYPE_SIZE * settingIndex + 8, glowColorRGB);
+            mem::WriteInt(basePointer + 0x270, 1);
         }
         //item Glow
         for (int highlightId = 31; highlightId < 35; highlightId++) {
@@ -204,8 +204,6 @@ public:
         }
         return m_isNPC;
     }
-    //==============================================
-
     int getGlowThroughWall()
     {
         long basePointer = getBasePointer();
